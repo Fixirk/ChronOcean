@@ -34,7 +34,7 @@ func _physics_process(delta):
 		motion.x = MAXSPEED
 		facing_right =true
 		$AnimationPlayer.play("go left")
-	if Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
 	else:
 		motion.x =0
