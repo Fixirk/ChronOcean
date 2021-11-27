@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="ChronOcean"
-run/main_scene="res://IntroScene.tscn"
+run/main_scene="res://Scenes/IntroScene.tscn"
 config/icon="res://icon.png"
 
 [display]
