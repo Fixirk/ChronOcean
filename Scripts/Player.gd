@@ -40,3 +40,11 @@ func _physics_process(delta):
 	else:
 		_animated_sprite.play("idle")
 	_animated_sprite.set_flip_h(!facing_right)
+
+
+func set_active(active):
+	_animated_sprite.play("idle")
+	set_physics_process(active)
+	set_process((active))
+	set_process_input(active)
+		

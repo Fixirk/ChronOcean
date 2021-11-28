@@ -8,7 +8,7 @@ script = ExtResource( 2 )
 dialogue_file = "res://Dialogues/json/npc.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_right = 576.0
+margin_right = 512.0
 margin_bottom = 230.0
 texture = ExtResource( 1 )
 patch_margin_left = 43
@@ -39,3 +39,9 @@ text = "Name"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

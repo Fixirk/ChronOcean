@@ -1,7 +1,26 @@
 [
-  {"name": "NPC", "text": "Hello stranger!"},
-  {"name": "Player", "text": "Hello bigger stranger!"},
-  {"name": "NPC", "text": "It's dangerous to go alone."},
-  {"name": "Player", "text": "Yea, I know, but I have my hammer with me."},
-  {"name": "NPC", "text": "Ah, ok. Have a nice trip!"}
+  {
+    "name": "Scientifique",
+    "text": "Salut mon garçon !"
+  },
+  {
+    "name": "Chronos",
+    "text": "..."
+  },
+  {
+    "name": "Scientifique",
+    "text": "C'est à toi que je parle"
+  },
+  {
+    "name": "Chronos",
+    "text": "Qu'est ce que vous me voulez ?"
+  },
+  {
+    "name": "Scientifique",
+    "text": "J'ai besoin de ton aide..., nous avons tous besoin de toi !"
+  },
+  {
+    "name": "Chronos",
+    "text": "J'ai  !"
+  }
 ]

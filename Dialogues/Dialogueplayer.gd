@@ -4,27 +4,39 @@ export (String, FILE, "*.json") var dialogue_file
 
 var dialogues = []
 var current_dialogue_id = 0
+var is_dialogue_active = false
+
 
 func _ready():
-	$NinePatchRect.visble = false 
-	play()
+	$NinePatchRect.visible = false 
+
 	
 func play():
+	if is_dialogue_active:
+		return
+	
 	dialogues = load_dialogue()
-		$NinePatchRect.visble = true 
+	turn_off_the_player()
+	is_dialogue_active = true
+	$NinePatchRect.visible = true 
 	current_dialogue_id = -1
 	next_line()
 
 
 func _input(event):
+	if not is_dialogue_active:
+		return
+		
 	if event.is_action_pressed("game_usage"):
-		print('wesh')
 		next_line()
 		
 func next_line():
 	current_dialogue_id += 1
-	
+	print(current_dialogue_id)
 	if current_dialogue_id >= len(dialogues):
+		$Timer.start()
+		$NinePatchRect.visible= false
+		turn_on_the_player()
 		return
 	
 	$NinePatchRect/Name.text = dialogues[current_dialogue_id]['name']
@@ -38,3 +50,18 @@ func load_dialogue():
 		return parse_json(file.get_as_text())
 		
 
+
+
+func _on_Timer_timeout():
+	is_dialogue_active = false
+	
+func turn_on_the_player():
+	var player = get_tree().get_root().find_node("Player",true,false)	
+	if player:
+		player.set_active(true)
+
+func turn_off_the_player():
+	var player = get_tree().get_root().find_node("Player",true,false)	
+	if player:
+		player.set_active(false)	
+	 # Replace with function body.

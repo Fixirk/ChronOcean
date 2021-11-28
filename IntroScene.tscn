@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprite/PersoSpriteSheet.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Scientific.gd" type="Script" id=3]
+[ext_resource path="res://Dialogues/Dialogueplayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background/BG1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Sprite/Scientifique_idle.png" type="Texture" id=5]
+[ext_resource path="res://NPC.gd" type="Script" id=6]
 [ext_resource path="res://assets/Sprite/questionmark.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -66,6 +67,9 @@ animations = [ {
 radius = 81.0
 height = 330.0
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 109.5, 243 )
+
 [sub_resource type="Animation" id=11]
 resource_name = "Idle scientiste"
 length = 2.0
@@ -98,7 +102,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Questionmark:frame")
+tracks/1/path = NodePath("../NPC/Questionmark:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -115,7 +119,7 @@ resource_name = "questionmark"
 length = 1.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Questionmark:frame")
+tracks/0/path = NodePath("../NPC/Questionmark:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -139,10 +143,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 109.5, 243 )
-
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( 1, 0 )
 
 [node name="Bg1" type="Sprite" parent="."]
@@ -198,27 +199,28 @@ shape = SubResource( 7 )
 
 [node name="Node2D" type="Node2D" parent="Player"]
 
-[node name="Scientific" type="StaticBody2D" parent="."]
+[node name="NPC" type="Area2D" parent="."]
 position = Vector2( 1476, 407 )
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
-[node name="ScientifiqueIdle" type="Sprite" parent="Scientific"]
+[node name="ScientifiqueIdle" type="Sprite" parent="NPC"]
 texture = ExtResource( 5 )
 hframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scientific"]
+[node name="Questionmark" type="Sprite" parent="NPC"]
+position = Vector2( -7.99988, -272 )
+scale = Vector2( 0.230729, 0.264583 )
+texture = ExtResource( 7 )
+vframes = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2( 1.5, 33 )
+shape = SubResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
 root_node = NodePath("../ScientifiqueIdle")
 "anims/Idle scientiste" = SubResource( 11 )
 anims/RESET = SubResource( 12 )
 anims/questionmark = SubResource( 17 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scientific"]
-position = Vector2( 1.5, 33 )
-shape = SubResource( 13 )
-disabled = true
-
-[node name="Questionmark" type="Sprite" parent="Scientific"]
-position = Vector2( -7.99988, -272 )
-scale = Vector2( 0.230729, 0.264583 )
-texture = ExtResource( 7 )
-vframes = 13
+[node name="DialoguePlayer" parent="NPC" instance=ExtResource( 3 )]

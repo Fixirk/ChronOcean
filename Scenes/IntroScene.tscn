@@ -175,7 +175,6 @@ hframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -379, -252 )
-current = true
 zoom = Vector2( 0.9, 0.9 )
 limit_left = -350
 limit_right = 1600
