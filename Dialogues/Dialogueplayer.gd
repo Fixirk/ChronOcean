@@ -37,6 +37,7 @@ func next_line():
 		$Timer.start()
 		$NinePatchRect.visible= false
 		turn_on_the_player()
+		next_scene()
 		return
 	
 	$NinePatchRect/Name.text = dialogues[current_dialogue_id]['name']
@@ -51,7 +52,9 @@ func load_dialogue():
 		
 
 
-
+func next_scene():
+	get_tree().change_scene("res://Scenes/CigaretteGameScene.tscn")
+	
 func _on_Timer_timeout():
 	is_dialogue_active = false
 	
