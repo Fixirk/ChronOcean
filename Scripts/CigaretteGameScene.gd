@@ -36,6 +36,7 @@ func spawn_one_cigarette(position):
 	playerInstance.position = position
 	add_child(playerInstance)
 	
+	playerInstance.apply_torque_impulse (10.5)
 	playerInstance.apply_impulse(Vector2.ZERO, Vector2(rng.randf_range(-1, 1) * 10, rng.randf_range(-1, 1) * 10))
 
 func spawn_cigarettes(nb_of_cigarettes):
@@ -43,6 +44,7 @@ func spawn_cigarettes(nb_of_cigarettes):
 	for n in nb_of_cigarettes:
 		var is_used_position = 0
 		var i = 0
+		n
 		
 		while is_used_position >= 0:
 			i  = rng.randi_range(0, positions.size() - 1)
@@ -65,8 +67,13 @@ func _on_Timer_timeout():
 
 func increase_score():
 	score += 1
+	$CanvasLayer/Score.text = "Score : "+ String(score)
 	print(score)
 	
 func decrease_score():
 	score -= 1
+	$CanvasLayer/Score.text = "Score : "+ String(score)
 	print(score)
+	
+func scoring():
+	print($CanvasLayer)
