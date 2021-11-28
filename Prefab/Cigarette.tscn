@@ -5,7 +5,10 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="Cigarette" type="Area2D"]
+[node name="Cigarette" type="RigidBody2D"]
+contacts_reported = 10
+contact_monitor = true
+linear_damp = 2.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
