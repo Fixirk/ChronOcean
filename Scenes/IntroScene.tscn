@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprite/PersoSpriteSheet.png" type="Texture" id=2]
-[ext_resource path="res://Scientific.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Scientific.gd" type="Script" id=3]
 [ext_resource path="res://assets/background/BG1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Sprite/Scientifique_idle.png" type="Texture" id=5]
 [ext_resource path="res://assets/Sprite/questionmark.png" type="Texture" id=7]
