@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 export (String, FILE, "*.json") var dialogue_file
+export (String, FILE, "*.tscn") var next_scene_path
 
 var dialogues = []
 var current_dialogue_id = 0
@@ -37,7 +38,8 @@ func next_line():
 		$Timer.start()
 		$NinePatchRect.visible= false
 		turn_on_the_player()
-		next_scene()
+		if next_scene_path != "":
+			next_scene()
 		return
 	
 	$NinePatchRect/Name.text = dialogues[current_dialogue_id]['name']
@@ -53,7 +55,7 @@ func load_dialogue():
 
 
 func next_scene():
-	get_tree().change_scene("res://Scenes/CigaretteGameScene.tscn")
+	get_tree().change_scene(next_scene_path)
 	
 func _on_Timer_timeout():
 	is_dialogue_active = false

@@ -20,6 +20,45 @@ resource_name = "Intro-cutscene"
 [sub_resource type="Animation" id=6]
 length = 0.001
 
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 250, 400 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 250, 0, 250, 400 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.5
+} ]
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 250, 500 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 250, 0, 250, 500 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 33 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 151.922, 49 )
+
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
@@ -63,48 +102,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 81.0
-height = 330.0
-
-[sub_resource type="AtlasTexture" id=31]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 250, 400 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 250, 0, 250, 400 )
-
-[sub_resource type="SpriteFrames" id=35]
-animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "idle",
-"speed": 1.5
-} ]
-
-[sub_resource type="AtlasTexture" id=36]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 250, 500 )
-
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 250, 0, 250, 500 )
-
-[sub_resource type="SpriteFrames" id=34]
-animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 33 ) ],
-"loop": true,
-"name": "idle",
-"speed": 1.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 167.375, 114 )
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 80.0625, 214.375 )
 
 [node name="Node2D2" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -136,34 +135,8 @@ position = Vector2( 655, 361 )
 anims/Intro-cutscene = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 197, 639 )
-script = ExtResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -399, -186 )
-frames = SubResource( 27 )
-animation = "idle"
-playing = true
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -379, -252 )
-current = true
-zoom = Vector2( 0.9, 0.9 )
-limit_left = -350
-limit_right = 1600
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -404, -186 )
-shape = SubResource( 7 )
-
-[node name="Node2D" type="Node2D" parent="Player"]
-
 [node name="NPC" type="Area2D" parent="."]
-position = Vector2( 1476, 407 )
+position = Vector2( 1103, 413 )
 script = ExtResource( 6 )
 
 [node name="QuestionMark" type="AnimatedSprite" parent="NPC"]
@@ -185,3 +158,49 @@ position = Vector2( -59.625, 19 )
 shape = SubResource( 13 )
 
 [node name="DialoguePlayer" parent="NPC" instance=ExtResource( 3 )]
+next_scene_path = "res://Scenes/RencontreFumeurScene.tscn"
+
+[node name="Ville" type="Area2D" parent="."]
+position = Vector2( 1476, 407 )
+script = ExtResource( 6 )
+
+[node name="QuestionMark" type="AnimatedSprite" parent="Ville"]
+position = Vector2( -980, -233 )
+scale = Vector2( 0.230729, 0.264583 )
+frames = SubResource( 35 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ville"]
+position = Vector2( -1100, -51 )
+shape = SubResource( 13 )
+
+[node name="DialoguePlayer" parent="Ville" instance=ExtResource( 3 )]
+dialogue_file = "res://Dialogues/json/intro1.json"
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 197, 639 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -399, -186 )
+frames = SubResource( 27 )
+animation = "idle"
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -379, -252 )
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = -350
+limit_right = 1600
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -403, -176 )
+shape = SubResource( 37 )
+
+[node name="Node2D" type="Node2D" parent="Player"]

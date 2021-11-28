@@ -57,9 +57,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=30]
-radius = 81.0
-height = 330.0
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 78.75, 206.75 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
@@ -109,13 +108,14 @@ extents = Vector2( 72.6719, 46.7305 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Bg1" type="Sprite" parent="."]
-position = Vector2( 639, 356 )
+position = Vector2( 638, 357 )
+scale = Vector2( 1, 1.03571 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="Sol" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 643, 736 )
+position = Vector2( 643, 747 )
 scale = Vector2( 16, 1.125 )
 shape = SubResource( 27 )
 
@@ -131,11 +131,11 @@ shape = SubResource( 28 )
 position = Vector2( 561, 373 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 1908, 684 )
+position = Vector2( 1872, 631 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -402, -180 )
+position = Vector2( -409, -174 )
 scale = Vector2( 0.976, 0.976 )
 frames = SubResource( 29 )
 animation = "idle"
@@ -153,8 +153,8 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -404, -186 )
-shape = SubResource( 30 )
+position = Vector2( -409, -141 )
+shape = SubResource( 40 )
 
 [node name="Node2D" type="Node2D" parent="Player"]
 
@@ -167,14 +167,12 @@ position = Vector2( 169, -250 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Scientifique" type="AnimatedSprite" parent="NPC"]
 position = Vector2( -21, -31 )
 frames = SubResource( 36 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
@@ -184,6 +182,7 @@ shape = SubResource( 37 )
 
 [node name="DialoguePlayer" parent="NPC" instance=ExtResource( 7 )]
 dialogue_file = "res://Dialogues/json/fumeurRencontre.json"
+next_scene_path = "res://Scenes/CigaretteGameScene.tscn"
 
 [node name="Egouts" type="Area2D" parent="."]
 position = Vector2( -84, 476 )
@@ -194,6 +193,7 @@ position = Vector2( 1060, -32 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egouts"]
@@ -212,6 +212,7 @@ position = Vector2( 1209, -215 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ballon"]
