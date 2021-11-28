@@ -68,7 +68,7 @@ radius = 81.0
 height = 330.0
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 109.5, 243 )
+extents = Vector2( 109.5, 228.5 )
 
 [sub_resource type="Animation" id=11]
 resource_name = "Idle scientiste"
@@ -180,7 +180,6 @@ script = ExtResource( 1 )
 position = Vector2( -399, -186 )
 frames = SubResource( 27 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -214,7 +213,7 @@ texture = ExtResource( 7 )
 vframes = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
-position = Vector2( 1.5, 33 )
+position = Vector2( 1.5, 18.5 )
 shape = SubResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]

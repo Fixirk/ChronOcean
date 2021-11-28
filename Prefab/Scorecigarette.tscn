@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 0.169
+anchor_bottom = 0.264
+margin_right = -1.32002
+margin_bottom = -3.08
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
