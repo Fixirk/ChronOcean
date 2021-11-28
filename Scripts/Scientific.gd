@@ -1,16 +1,21 @@
 extends StaticBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _input(event):
+	if event.is_action_pressed("game_usage"):
+		find_and_use_dialogue()
+		
+func find_and_use_dialogue():
+	var dialogue_player = get_node_or_null("DialoguePlayer")
+	
+	if dialogue_player:
+		dialogue_player.play("DialoguePlayer")
 
 #var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	connect('body_entered',self,'_on_NPC_body_entered')
 #	connect('body_entered',self,'_on_NPC_body_exited')
-
 	$AnimationPlayer.play("questionmark")
 	pass
  # Replace with function body.
