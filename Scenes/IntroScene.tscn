@@ -1,14 +1,8 @@
 [gd_scene load_steps=18 format=2]
 
-<<<<<<< HEAD:IntroScene.tscn
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprite/PersoSpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Scientific.gd" type="Script" id=3]
-=======
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Img/pngegg.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
->>>>>>> f5c714656257c9a6c0e4c510773fd7f17101a7a8:Scenes/IntroScene.tscn
 [ext_resource path="res://assets/background/BG1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Sprite/Scientifique_idle.png" type="Texture" id=5]
 [ext_resource path="res://assets/Sprite/questionmark.png" type="Texture" id=7]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perso_walk.png-d590b55bc9b7ad756bddabce68398c5b.stex"
+path="res://.import/cigarette.png-ee1f3a9aaa1e39c7b93a48771101e81c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/Perso_walk.png"
-dest_files=[ "res://.import/Perso_walk.png-d590b55bc9b7ad756bddabce68398c5b.stex" ]
+source_file="res://Assets/CigaretteGame/cigarette.png"
+dest_files=[ "res://.import/cigarette.png-ee1f3a9aaa1e39c7b93a48771101e81c.stex" ]
 
 [params]
 

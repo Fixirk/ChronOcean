@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perso_walk.png-d590b55bc9b7ad756bddabce68398c5b.stex"
+path="res://.import/arrow.png-be0f35000f64d374cb9ad19cd3acc0c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/Perso_walk.png"
-dest_files=[ "res://.import/Perso_walk.png-d590b55bc9b7ad756bddabce68398c5b.stex" ]
+source_file="res://Assets/CigaretteGame/arrow.png"
+dest_files=[ "res://.import/arrow.png-be0f35000f64d374cb9ad19cd3acc0c0.stex" ]
 
 [params]
 
