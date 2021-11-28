@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ashtray.png-55c37ed1622cb3a70797f7bbcf96c508.stex"
+path="res://.import/ashtray.png-461c70ce5e9ddd5dce3a2517453d96d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CigaretteGame/ashtray.png"
-dest_files=[ "res://.import/ashtray.png-55c37ed1622cb3a70797f7bbcf96c508.stex" ]
+source_file="res://assets/CigaretteGame/ashtray.png"
+dest_files=[ "res://.import/ashtray.png-461c70ce5e9ddd5dce3a2517453d96d3.stex" ]
 
 [params]
 

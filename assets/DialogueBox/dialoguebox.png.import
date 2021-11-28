@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Scientifique_idle.png-60c392bb15f74ada1a0d6b869cd54afe.stex"
+path="res://.import/dialoguebox.png-69d3978480e869aecf4f3318ea5f041c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/Scientifique_idle.png"
-dest_files=[ "res://.import/Scientifique_idle.png-60c392bb15f74ada1a0d6b869cd54afe.stex" ]
+source_file="res://assets/DialogueBox/dialoguebox.png"
+dest_files=[ "res://.import/dialoguebox.png-69d3978480e869aecf4f3318ea5f041c.stex" ]
 
 [params]
 
