@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-be0f35000f64d374cb9ad19cd3acc0c0.stex"
+path="res://.import/arrow.png-d5694985a9c205cc05f8b7024345bdd4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CigaretteGame/arrow.png"
-dest_files=[ "res://.import/arrow.png-be0f35000f64d374cb9ad19cd3acc0c0.stex" ]
+source_file="res://assets/CigaretteGame/arrow.png"
+dest_files=[ "res://.import/arrow.png-d5694985a9c205cc05f8b7024345bdd4.stex" ]
 
 [params]
 
