@@ -6,9 +6,9 @@ const MAXFALLSPEED = 200
 const MAXSPEED = 220
 
 var motion = Vector2()
-var facing_right = true
-
 onready var _animated_sprite = $AnimatedSprite
+onready var facing_right = !$AnimatedSprite.is_flipped_h()
+
 
 func _ready():
 	# Called when the node enters the scene tree for the first time.
