@@ -3,47 +3,40 @@ extends KinematicBody2D
 const UP = Vector2(0,-1)
 const GRAVITY = 20
 const MAXFALLSPEED = 200
-const MAXSPEED = 180
-
+const MAXSPEED = 220
 
 var motion = Vector2()
 var facing_right = true
 
+onready var _animated_sprite = $AnimatedSprite
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("IdleRight")
+	# Called when the node enters the scene tree for the first time.
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	# Gravité
 	motion.y += GRAVITY
-
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 		
-	
+	# Gestion vélocité et direction
 	if Input.is_action_pressed("right"):
 		motion.x = MAXSPEED
-		facing_right =true
-		$AnimationPlayer.play("Walkright")
-		
+		facing_right = true
 	elif Input.is_action_pressed("left"):
 		motion.x = -MAXSPEED
-		$AnimationPlayer.play("Walkright")
+		facing_right = false		
 	else:
-		motion.x =0
+		motion.x =0	
 	
-	print($AnimationPlayer.get_queue())	
+	motion = move_and_slide(motion,UP)	
 	
-	
-	
-		
-	$AnimationPlayer.play("IdleRight")	
-	print(motion)	
-	motion = move_and_slide(motion,UP)
+	# Gestion animation
+	if Input.is_action_pressed("right"):
+		_animated_sprite.play("walk")
+	elif Input.is_action_pressed("left"):
+		_animated_sprite.play("walk")		
+	else:
+		_animated_sprite.play("idle")
+	_animated_sprite.set_flip_h(!facing_right)

@@ -17,6 +17,10 @@ extents = Vector2( 10, 9 )
 [node name="CigaretteGameScene" type="Node2D"]
 script = ExtResource( 6 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 13.0001, 340 )
 scale = Vector2( 1.30857, 1.30857 )
@@ -69,3 +73,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ashtray"]
 scale = Vector2( 3, 1 )
 shape = SubResource( 3 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Ashtray" to="Ashtray/Arrow" method="_on_Ashtray_body_entered"]

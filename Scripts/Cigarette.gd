@@ -1,10 +1,11 @@
 extends Node
 
+onready var game = get_node("/root/CigaretteGameScene")
+
 func _on_Cigarette_body_entered(body):
 	if body.name == "Ashtray":
-		# delete cigarette
-		# add score to player
-		queue_free()
-		
-
-# action upon reaching floor
+		self.queue_free()
+		game.increase_score()
+	elif body.name == "Floor":
+		self.queue_free()
+		game.decrease_score()
