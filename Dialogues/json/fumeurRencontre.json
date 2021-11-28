@@ -4,7 +4,36 @@
     "text": "(Hmm... Ce type me parait louche...)"
   },
   {
+    "name": "Homme louche",
+    "text": "Hey ! Ecarte-toi, j'essaye de faire un record !"
+  },
+
+  {
     "name": "Chronos",
-    "text": "Hey !"
+    "text": "Un record ? ça a l'air intéressant !"
+  },
+
+  {
+    "name": "Homme louche",
+    "text": "Ouais frérot ! Un record de hauteur d'une pile de mégots ! C'est ultra fun et addictif !"
+  },
+
+  {
+    "name": "Chronos",
+    "text": "QUOI ?????? Il existe donc des gens aussi peu responsables ?! Vous ne pensez pas aux océans ?"
+  },
+
+  {
+    "name": "Homme louche",
+    "text": "Qu'est-ce que tu me racontes petit ? Ici c'est la rue, l'océan est à des kilomètres hahahaha !! Aucune chance que je le pollue. Tu es sûr que ça va ? Tu m'as l'air bien bour-..."
+  },
+    {
+    "name": "Chronos",
+    "text": "Ca suffit ! Veuillez cesser ceci immédiatemment !"
+  },
+
+  {
+    "name": "Homme louche",
+    "text": "Hahahaha !! Essaye de m'en empêcher !"
   }
 ]

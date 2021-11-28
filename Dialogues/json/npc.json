@@ -1,26 +1,40 @@
 [
   {
-    "name": "Scientifique",
-    "text": "Salut mon garçon !"
+    "name": "Professeur Abellion",
+    "text": "Salut Chronos ! Je t'attendais !!"
   },
   {
     "name": "Chronos",
-    "text": "..."
+    "text": "Professeur !"
   },
+
   {
-    "name": "Scientifique",
-    "text": "C'est à toi que je parle"
+    "name": "Professeur Abellion",
+    "text": "Ma machine à remonter dans le temps est fin prête ! Tu retourneras en 2021 pour tâcher de sensibiliser l'humanité à la protection de l'océan."
   },
+  
+  {
+    "name": "Professeur Abellion",
+    "text": "Je sais que tu as toujours rêvé de vivre dans un envionnement diversifié, riche et respirable !"
+  },
+
+  {
+    "name": "Professeur Abellion",
+    "text": "Tu n'imagines pas le nombre d'espèces que l'on a perdu... Nous devons changer les mentalités du passé !"
+  },
+
+  {
+    "name": "Professeur Abellion",
+    "text": "Es-tu prêt à accomplir ta noble quête?"
+  },
+
   {
     "name": "Chronos",
-    "text": "Qu'est ce que vous me voulez ?"
+    "text": "Bien sûr !!"
   },
+
   {
-    "name": "Scientifique",
-    "text": "J'ai besoin de ton aide..., nous avons tous besoin de toi !"
-  },
-  {
-    "name": "Chronos",
-    "text": "J'ai  !"
+    "name": "Professeur Abellion",
+    "text": "Alors c'est parti ! Pour les hommes !"
   }
 ]
