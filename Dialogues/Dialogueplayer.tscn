@@ -8,22 +8,20 @@ script = ExtResource( 2 )
 dialogue_file = "res://Dialogues/json/npc.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_right = 512.0
-margin_bottom = 230.0
+margin_left = 240.0
+margin_top = 504.0
+margin_right = 962.0
+margin_bottom = 656.0
 texture = ExtResource( 1 )
-patch_margin_left = 43
-patch_margin_top = 91
-patch_margin_right = 79
-patch_margin_bottom = 139
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Message" type="RichTextLabel" parent="NinePatchRect"]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 512.0
-margin_bottom = 216.0
+margin_left = 35.0
+margin_top = 57.0
+margin_right = 690.0
+margin_bottom = 130.0
 text = "Messgae
 "
 __meta__ = {

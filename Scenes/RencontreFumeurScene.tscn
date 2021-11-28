@@ -1,8 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Sprite/PersoSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/background/BG2.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://NPC.gd" type="Script" id=4]
+[ext_resource path="res://assets/Sprite/Fumeur_idle.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprite/NaniSpritesheet.png" type="Texture" id=6]
+[ext_resource path="res://Dialogues/Dialogueplayer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 62.5312, 37.3333 )
@@ -57,6 +61,51 @@ animations = [ {
 radius = 81.0
 height = 330.0
 
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 250, 400 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 250, 0, 250, 400 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.5
+} ]
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 250, 500 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 250, 0, 250, 500 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 139.422, 57 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 113.5, 41.5 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 72.6719, 46.7305 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Bg1" type="Sprite" parent="."]
@@ -82,7 +131,7 @@ shape = SubResource( 28 )
 position = Vector2( 561, 373 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 1834, 684 )
+position = Vector2( 1908, 684 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -108,3 +157,66 @@ position = Vector2( -404, -186 )
 shape = SubResource( 30 )
 
 [node name="Node2D" type="Node2D" parent="Player"]
+
+[node name="NPC" type="Area2D" parent="."]
+position = Vector2( -84, 476 )
+script = ExtResource( 4 )
+
+[node name="QuestionMark" type="AnimatedSprite" parent="NPC"]
+position = Vector2( 169, -250 )
+scale = Vector2( 0.230729, 0.264583 )
+frames = SubResource( 33 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="Scientifique" type="AnimatedSprite" parent="NPC"]
+position = Vector2( -21, -31 )
+frames = SubResource( 36 )
+animation = "idle"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2( 116, -6 )
+shape = SubResource( 37 )
+
+[node name="DialoguePlayer" parent="NPC" instance=ExtResource( 7 )]
+dialogue_file = "res://Dialogues/json/fumeurRencontre.json"
+
+[node name="Egouts" type="Area2D" parent="."]
+position = Vector2( -84, 476 )
+script = ExtResource( 4 )
+
+[node name="QuestionMark" type="AnimatedSprite" parent="Egouts"]
+position = Vector2( 1060, -32 )
+scale = Vector2( 0.230729, 0.264583 )
+frames = SubResource( 33 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egouts"]
+position = Vector2( 912, 138 )
+shape = SubResource( 38 )
+
+[node name="DialoguePlayer" parent="Egouts" instance=ExtResource( 7 )]
+dialogue_file = "res://Dialogues/json/egouts.json"
+
+[node name="Ballon" type="Area2D" parent="."]
+position = Vector2( -72, 474 )
+script = ExtResource( 4 )
+
+[node name="QuestionMark" type="AnimatedSprite" parent="Ballon"]
+position = Vector2( 1209, -215 )
+scale = Vector2( 0.230729, 0.264583 )
+frames = SubResource( 33 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ballon"]
+position = Vector2( 1345, -56 )
+shape = SubResource( 39 )
+
+[node name="DialoguePlayer" parent="Ballon" instance=ExtResource( 7 )]
+dialogue_file = "res://Dialogues/json/ballonTortue.json"
