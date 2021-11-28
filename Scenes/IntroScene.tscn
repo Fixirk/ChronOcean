@@ -136,7 +136,7 @@ anims/Intro-cutscene = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [node name="NPC" type="Area2D" parent="."]
-position = Vector2( 1103, 413 )
+position = Vector2( 1509, 424 )
 script = ExtResource( 6 )
 
 [node name="QuestionMark" type="AnimatedSprite" parent="NPC"]
@@ -144,6 +144,7 @@ position = Vector2( -70, -230 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 35 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Scientifique" type="AnimatedSprite" parent="NPC"]
@@ -169,7 +170,6 @@ position = Vector2( -980, -233 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 35 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ville"]
@@ -187,6 +187,7 @@ script = ExtResource( 1 )
 position = Vector2( -399, -186 )
 frames = SubResource( 27 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

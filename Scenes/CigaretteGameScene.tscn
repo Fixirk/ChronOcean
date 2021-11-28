@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/Background/BG1.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/BG2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/CigaretteGame/ashtray.png" type="Texture" id=2]
 [ext_resource path="res://Assets/CigaretteGame/arrow.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Arrow.gd" type="Script" id=4]
@@ -27,7 +27,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 13.0001, 340 )
+position = Vector2( 1251, 340 )
 scale = Vector2( 1.30857, 1.30857 )
 texture = ExtResource( 1 )
 
@@ -43,7 +43,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, 675 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 640, 0 )
+position = Vector2( 640, 40 )
 scale = Vector2( 75, 1 )
 shape = SubResource( 1 )
 
@@ -61,18 +61,19 @@ scale = Vector2( 1, 100 )
 shape = SubResource( 2 )
 
 [node name="Ashtray" type="RigidBody2D" parent="."]
-position = Vector2( 640, 650 )
+position = Vector2( 637, 681 )
 mass = 10.0
 contacts_reported = 10
 contact_monitor = true
 script = ExtResource( 5 )
 
 [node name="Arrow" type="Sprite" parent="Ashtray"]
-position = Vector2( 0, -30 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Ashtray"]
+position = Vector2( 0, -14 )
+scale = Vector2( 1.125, 1.125 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ashtray"]

@@ -167,12 +167,14 @@ position = Vector2( 169, -250 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Scientifique" type="AnimatedSprite" parent="NPC"]
 position = Vector2( -21, -31 )
 frames = SubResource( 36 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
@@ -193,7 +195,6 @@ position = Vector2( 1060, -32 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egouts"]
@@ -212,7 +213,6 @@ position = Vector2( 1209, -215 )
 scale = Vector2( 0.230729, 0.264583 )
 frames = SubResource( 33 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ballon"]
